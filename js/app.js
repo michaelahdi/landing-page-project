@@ -27,7 +27,12 @@ window.addEventListener("scroll", viewport);
 // establishing the function for the event listener with a loop to iterate through different sections
 function viewport(){    
       for( const section of sections){
-     
+            //using getbound method to determine which section in the view port
+            let site = section.getBoundingClientRect();
+            // console.log(site.top);
+            
+       }
+       
 
 };
 
