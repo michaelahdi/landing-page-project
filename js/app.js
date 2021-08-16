@@ -11,4 +11,11 @@ function addNavigate(elem){
       let parentul = document.getElementById("navbar__list") ;
       let childli = document.createElement("li");
       parentul.appendChild(childli);
-}
+      // anchor to the specific section using its specific attribute
+      //name linking each individual nav menu to its specific section using specific attribute too
+      let anchor = elem.getAttribute("id");
+      //console.log(anchor);
+      let naming = elem.getAttribute("data-nav");
+      childli.innerHTML= `<a class='menu__link' href='#${anchor}'>${naming}</a>`;
+};
+addNavigate(elem);
