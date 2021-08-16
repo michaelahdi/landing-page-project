@@ -18,4 +18,37 @@ function addNavigate(elem){
       let naming = elem.getAttribute("data-nav");
       childli.innerHTML= `<a class='menu__link' href='#${anchor}'>${naming}</a>`;
 };
-addNavigate(elem);
+//calling the function 
+//addNavigate(elem);
+
+// distinguish section in view port 
+window.addEventListener("scroll", viewport);
+function viewport(){    
+      for( const section of sections){
+      let site = section.getBoundingClientRect();
+      console.log(site.top);
+      if(site.top > 0 && site.top < 245 ){
+            section.classList.add("your-active-class");
+      }else{
+            section.classList.remove("your-active-class");
+      };
+}
+
+
+};
+
+      
+     
+           
+        
+
+let lists = document.querySelectorAll("li");
+console.log(lists);
+for(let i=0 ; i<lists.length ; i++){
+      lists[i].addEventListener("click", function(){
+              lists[i].scrollIntoView({behavior: "smooth"});
+                  
+            });
+};
+
+
