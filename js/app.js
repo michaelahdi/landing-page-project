@@ -30,7 +30,14 @@ function viewport(){
             //using getbound method to determine which section in the view port
             let site = section.getBoundingClientRect();
             // console.log(site.top);
-            
+            // adding the active class to the section in view port
+            if(site.top > 0 && site.top < 245 ){
+                  
+                  section.classList.add("your-active-class");
+                  // removing active class from section not in view port
+            }else{
+                  section.classList.remove("your-active-class");
+            };
        }
        
 
