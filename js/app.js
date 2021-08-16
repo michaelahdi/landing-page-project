@@ -21,19 +21,13 @@ function addNavigate(elem){
 //calling the function 
 //addNavigate(elem);
 
-// distinguish section in view port 
+// distinguish section in view port
+//add the scroll event listener with a function 
 window.addEventListener("scroll", viewport);
+// establishing the function for the event listener with a loop to iterate through different sections
 function viewport(){    
       for( const section of sections){
-      let site = section.getBoundingClientRect();
-      console.log(site.top);
-      if(site.top > 0 && site.top < 245 ){
-            section.classList.add("your-active-class");
-      }else{
-            section.classList.remove("your-active-class");
-      };
-}
-
+     
 
 };
 
@@ -41,14 +35,3 @@ function viewport(){
      
            
         
-
-let lists = document.querySelectorAll("li");
-console.log(lists);
-for(let i=0 ; i<lists.length ; i++){
-      lists[i].addEventListener("click", function(){
-              lists[i].scrollIntoView({behavior: "smooth"});
-                  
-            });
-};
-
-
