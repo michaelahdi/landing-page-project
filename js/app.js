@@ -16,7 +16,17 @@ function addNavigate(elem){
       let anchor = elem.getAttribute("id");
       //console.log(anchor);
       let naming = elem.getAttribute("data-nav");
+      // adding menu_link class to the li to determine its place and style
       childli.innerHTML= `<a class='menu__link' href='#${anchor}'>${naming}</a>`;
+      //add functionality to acheive smooth scroll
+      let linkclick = document.querySelector("a");
+      //add event listener to the link
+      linkclick.addEventListener("click",smoothy);
+      // defining the add listener function
+      function smoothy (event){
+           event. preventDefault()
+            elem.scrollIntoView({behavior:"smooth"});
+      }
 };
 //calling the function 
 //addNavigate(elem);
@@ -42,6 +52,9 @@ function viewport(){
        
 
 };
+
+
+
 
       
      
