@@ -10,8 +10,8 @@
 
 
 /* ---- Base Rules ---- */
-html{
-    scroll-behavior: smooth;
+.activelink{
+    background-color: #cc1;
 }
 
 body {
