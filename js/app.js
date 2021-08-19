@@ -1,9 +1,10 @@
 // selecting all section tags in one variable
 let sections = document.querySelectorAll("section");
 //applying for each loop to iterate through each section 
-
-function addNavigate(){
 for(section of sections){
+      
+function addNavigate(){
+
 
 
 //sections.forEach(addNavigate);
@@ -79,7 +80,7 @@ function clickfunction(){
       this.classList.add("activelink");
       }
 }
-
+}
 };
 
 
