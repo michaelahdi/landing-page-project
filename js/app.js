@@ -1,11 +1,8 @@
 // selecting all section tags in one variable
 let sections = document.querySelectorAll("section");
 //applying for each loop to iterate through each section 
-for(section of sections){
-      
 function addNavigate(){
-
-
+for(section of sections){
 
 //sections.forEach(addNavigate);
 //through a function i will add link in the nav bar to each section 
@@ -18,20 +15,26 @@ function addNavigate(){
       parentul.appendChild(childli);
       // anchor to the specific section using its specific attribute
       //name linking each individual nav menu to its specific section using specific attribute too
+      let link = document.createElement("a");
       let anchor = section.getAttribute("id");
       //console.log(anchor);
       let naming = section.getAttribute("data-nav");
-     
-     
-      // adding menu_link class to the li to determine its place and style
-      childli.innerHTML= `<a class='menu__link' href='#${anchor}'>${naming}</a>`;
-      //add functionality to acheive smooth scroll
-     let linkclick = document.querySelectorAll("a");
-     for (let o = 0 ; o< linkclick.length ; o++){
-      linkclick[0].addEventListener("click", e => {
-            e.preventDefault();
-            section.scrollIntoView({behavior: "smooth"})
-           })
+      
+     link.textContent = naming ; 
+     link.href = `#${anchor}` ;
+// adding menu_link class to the li to determine its place and style
+     link.classList.add("menu__link");
+     childli.appendChild(link);
+     // acheiving smooth navigation also i can do this step through css file
+     link.addEventListener("click", e => {
+      e.preventDefault();
+      document
+      .querySelector(
+        "#" + e.target.innerText.toLowerCase().replace(/\s/g, "")
+      )
+      .scrollIntoView({ behavior: "smooth" });
+     })
+  
       }
    
 };
@@ -81,7 +84,7 @@ function clickfunction(){
       }
 }
 }
-};
+
 
 
 
